@@ -71,7 +71,7 @@ private func getPDFtextPaginated (result: FlutterResult, path: String)
                 if let pageContent = pdf.page(at: i)?.string {
                   pdfArray.append(pageContent)
                 } else {
-                    pdfArray.append("") // Handle missing or empty pages gracefully
+                    continue // Handle missing or empty pages gracefully
                   }
                 }
                 DispatchQueue.main.sync {
